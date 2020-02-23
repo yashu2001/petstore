@@ -1,8 +1,8 @@
 About: 
 This project implements the backend for an online petstore management system.
-Technology stack:
-django 
-django rest framework
+Technology stack:\n
+django \n
+django rest framework\n
 sqlite database
 django simplejwt authentication
 Purpose:
