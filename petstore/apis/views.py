@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from django.http import HttpResponse,JsonResponse
+from rest_framework.permissions import IsAuthenticated
 from .models import pet,owner
 # Create your views here.
 class pets_api(APIView):
+    permission_classes = (IsAuthenticated,)
     def post(self,request,pet_id=''):
         '''this method is used to insert new pets either for new owners or for existing owners'''
         try:
@@ -84,6 +86,7 @@ class pets_api(APIView):
             #print(e)
             return JsonResponse("message:failed",safe=False,status=400)
 class ownerlist(APIView):
+    permission_classes = (IsAuthenticated,)
     def get(self,request):
         '''this method is used to get list of all owners'''
         try:
@@ -101,6 +104,7 @@ class ownerlist(APIView):
         except:
             return JsonResponse("message:failed to fetch",status=400,safe=False)
 class petowner(APIView):
+    permission_classes = (IsAuthenticated,)
     def get(self,request,pet_id):
         '''this method is used to get owner details of a particular pet'''
         try:
@@ -115,6 +119,7 @@ class petowner(APIView):
         except:
             return JsonResponse("message:failed to fetch",safe=False,status=400)
 class ownerpets(APIView):
+    permission_classes = (IsAuthenticated,)
     def get(self,request,o_id):
         '''this method is used to get all pets of an owner'''
         try:
