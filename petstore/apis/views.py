@@ -83,7 +83,7 @@ class pets_api(APIView):
                     up_pet.update(sex=y)      
             return JsonResponse("message:success",safe=False,status=200)
         except Exception as e:
-            #print(e)
+            print(e)
             return JsonResponse("message:failed",safe=False,status=400)
 class ownerlist(APIView):
     permission_classes = (IsAuthenticated,)
