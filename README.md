@@ -6,5 +6,6 @@ This project implements the backend for an online petstore management system.
   <li>django rest framework</li>
   <li>sqlite database</li>
   <li>django simplejwt authentication</li>
+</ul>  
 <h1>Purpose:</h1>
 This project gives an insight on the various http methods and error codes used in different circumstances along with providing a brief idea of how realtime systems are modelled
